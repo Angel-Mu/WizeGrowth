@@ -1,11 +1,11 @@
-var wizeGrowth = angular.module('wizeGrowth', []);
+const wizeGrowth = angular.module('wizeGrowth', []);
 
 function mainController($scope, $http) {
   $http.get('/')
-    .success(function(data) {
+    .success((data) => {
       console.log(data);
     })
-    .error(function(data) {
-      console.log('Error: ' + data);
+    .error((data) => {
+      console.log(`Error: ${data}`);
     });
 }
