@@ -146,6 +146,6 @@ app.use('/api/star', stars);
   });
 
 // listen (start app with node server.js) ==========================
-app.listen(5000);
+app.listen(process.env.PORT);
 
 logger.info('App listening on port 5000');
