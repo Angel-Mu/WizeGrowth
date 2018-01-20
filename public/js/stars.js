@@ -1,6 +1,18 @@
 var wizeGrowth = angular.module('wizeGrowth', []);
 
 function mainController($scope, $http) {
+	$scope.saveStar = function() {
+		$http.post('/api/star', $scope.formData)
+		.success(function(data) {
+			$scope.formData = {};
+			$scope.stars = data;
+			console.log(data);
+		})
+		.error(function(data) {
+			console.log('Error: ' + data);
+		});
+	};
+
 	$scope.stars = [
 		{
 			id:1,
