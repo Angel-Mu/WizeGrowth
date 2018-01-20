@@ -4,32 +4,32 @@ function mainController($scope, $http) {
 	$scope.stars = [
 		{
 			id:1,
-			name:'Hackathon Winner',
+			name:'The hackathon Winner',
 			desc:'Win a hackathon',
 			prize:'1500 USD',
 		},
 		{
 			id:2,
-			name:'Hackathon Participant',
+			name:'The hackathon Participant',
 			desc:'Participate in a Hackathon',
 			prize:'',
 		},
 		{
 			id:3,
-			name:'',
-			desc:'',
+			name:'The buddy',
+			desc:'Being a buddy',
 			prize:'',
 		},
 		{
 			id:4,
-			name:'',
-			desc:'',
+			name:'The internal lecturer',
+			desc:'Give a lecture inside wizeline',
 			prize:'',
 		},
 		{
 			id:5,
-			name:'',
-			desc:'',
+			name:'The outsider',
+			desc:'Give a lecture outside wizeline',
 			prize:'',
 		},
 		{
