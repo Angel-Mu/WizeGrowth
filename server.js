@@ -9,6 +9,7 @@ const app = express(); // create our app with express
 const morgan = require('morgan'); // log request to the console (express4)
 const bodyParser = require('body-parser'); // pull info from HTML POST (express4)
 
+const routes = require('./api/routes');
 const users = require('./api/routes/users');
 const jobs = require('./api/routes/jobs');
 const categories = require('./api/routes/categories');
@@ -65,15 +66,37 @@ app.use(passport.session());
 
 app.use(flash());
 
+// Handle auth failure error messages
+app.use(function(req, res, next) {
+ if (req && req.query && req.query.error) {
+   req.flash("error", req.query.error);
+ }
+ if (req && req.query && req.query.error_description) {
+   req.flash("error_description", req.query.error_description);
+ }
+ next();
+});
+
+// Check logged in
+app.use(function(req, res, next) {
+  res.locals.loggedIn = false;
+  if (req.session.passport && typeof req.session.passport.user != 'undefined') {
+    res.locals.loggedIn = true;
+  }
+  next();
+});
+
 // routes =========================================
+app.use('/', routes);
 app.use('/api/user', users);
 app.use('/api/job', jobs);
 app.use('/api/category', categories);
 
 // application ========================================
-app.get('*', function (req, res) {
-  res.sendfile('./public.index.html'); // load the single view file (angular will handle the page changes on the front-end)
-});
+
+// app.get('*', function (req, res) {
+//   res.sendfile('./public.index.html'); // load the single view file (angular will handle the page changes on the front-end)
+// });
 
 // listen (start app with node server.js) ==========================
 app.listen(5000);// define model ====================

@@ -22,11 +22,18 @@
   "homepage": "https://github.com/Angel-Mu/WizeGrowth#readme",
   "dependencies": {
     "body-parser": "~1.5.2",
+    "connect-ensure-login": "^0.1.1",
+    "connect-flash": "^0.1.1",
     "dotenv": "^4.0.0",
     "express": "~4.7.2",
+    "express-jwt": "^5.3.0",
+    "express-session": "^1.15.6",
+    "jwks-rsa": "^1.2.1",
     "method-override": "~2.1.2",
     "mongoose": "^5.0.1",
     "morgan": "~1.2.2",
+    "passport": "^0.4.0",
+    "passport-auth0": "^0.6.1",
     "request": "2.83.0",
     "winston": "^2.4.0"
   },
