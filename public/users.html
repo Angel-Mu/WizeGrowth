@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
-    <script src="js/stars.js"></script>
+    <script src="js/users.js"></script>
 
 </head>
 <!-- SET THE CONTROLLER -->
@@ -54,21 +54,21 @@
 						<img src="images/person-flat.png" />
 					</div>
 					<div class="name">
-						<h1>Jose Luis Hernandez{{ user.name }}</h1>
-						<h2>Software Engineer{{ user.job }}</h2>
+						<h1>{{ user.name }}</h1>
+						<h2>{{ user.job }}</h2>
 					</div>
 					<div class="stars">
 						<div>
 							<img src="images/stargold.png" alt="">
-							<p>1{{ user.goldstars }}</p>
+							<p>{{ user.goldstars }}</p>
 						</div>
 						<div>
 							<img src="images/silvergold.png" alt="">
-							<p>2{{ user.silverstars }}</p>
+							<p>{{ user.silverstars }}</p>
 						</div>
 						<div>
 							<img src="images/bronzegold.png" alt="">
-							<p>3{{ user.bronzestars }}</p>
+							<p>{{ user.bronzestars }}</p>
 						</div>
 					</div>
 				</div>
