@@ -25,8 +25,53 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse applica
 
 // application ========================================
 
-  app.get('*', function(req, res) {
-    res.sendfile('./public.index.html'); // load the single view file (angular will handle the page changes on the front-end)
+  app.get('/api/topten', function(req, res) {
+
+    var topten =  
+      [
+        {
+          id: 1,
+          name: 'Vicente Ramos',
+          job: 'Software Engineer',
+          goldstars: 4,
+          silverstars: 2,
+          bronzestars: 6
+        },
+        {
+          id: 2,
+          name: 'Jose Luis Hernandez Guerrero y algo mas',
+          job: 'Software Engineer',
+          goldstars: 2,
+          silverstars: 4,
+          bronzestars: 8
+        },
+        {
+          id: 3,
+          name: 'Alejandro Martinez',
+          job: 'Sales',
+          goldstars: 2,
+          silverstars: 2,
+          bronzestars: 2
+        },
+        {
+          id: 4,
+          name: 'Yathziry Magana',
+          job: 'QA Engineer',
+          goldstars: 0,
+          silverstars: 2,
+          bronzestars: 4
+        },
+        {
+          id: 5,
+          name: 'Angel Malavar',
+          job: 'Software Engineer',
+          goldstars: 1,
+          silverstars: 4,
+          bronzestars: 4
+        },
+      ];
+
+    res.json(topten);
   });
 
 // listen (start app with node server.js) ==========================

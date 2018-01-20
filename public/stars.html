@@ -1,0 +1,81 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="wizeGrowth">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+    <title>WizeGrowth</title>
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"><!-- load bootstrap -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+    <script src="js/stars.js"></script>
+
+</head>
+<!-- SET THE CONTROLLER -->
+<body ng-controller="mainController">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <img alt="Brand" src="images/logo.png">
+            </a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ol class="sidebar-nav">
+                <li class="sidebar-create-star">
+                    <a href="index.html">
+                        Home
+                    </a>
+                    <a href="stars.html">
+                        Manage Stars
+                    </a>
+                    <a href="#">
+                        Assign Star
+                    </a>
+                    <a href="#">
+                        Dashboard
+                    </a>
+                </li>
+            </ol>
+        </div>
+        <div id="page-content-wrapper">
+                <li ng-repeat="star in stars">
+                        <div>
+                            <div class="frame">
+                                <span class="helper"></span>
+                                <img src="images/achievment.png" height="40" />
+                            </div>
+                            <div class="laeaderboard_name">
+                                <h1><a href="users.html?id={{ user.id }}">{{ user.name }}</a></h1>
+                                <h2>{{ user.job }}</h2>
+                            </div>
+                            <div class="stars">
+                                <div>
+                                    <img src="images/stargold.png" alt="">
+                                    <p>{{ user.goldstars }}</p>
+                                </div>
+                                <div>
+                                    <img src="images/silvergold.png" alt="">
+                                    <p>{{ user.silverstars }}</p>
+                                </div>
+                                <div>
+                                    <img src="images/bronzegold.png" alt="">
+                                    <p>{{ user.bronzestars }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+        </div>
+    </div>
+</body>
+</html>
