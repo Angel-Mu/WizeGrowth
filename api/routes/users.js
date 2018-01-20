@@ -9,6 +9,6 @@ router.route('/')
   .get(/*ensureLoggedIn, */controller.list);
 
 router.route('/:id')
-  .get(controller.get);
+  .get(ensureLoggedIn, controller.get);
 
 module.exports = router;
