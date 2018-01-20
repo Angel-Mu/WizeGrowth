@@ -1,9 +1,21 @@
 {
-  "name": "WizeGrowth",
-  "version": "0.0.1",
-  "description": "WizeGrowth",
+  "name": "wize-growth",
+  "version": "0.1.0",
+  "description": "WizeGrowth is a tool that allows to recognize achievements and contributions transparently, providing visibility of Wizeliners growth in a fun way.",
   "main": "server.js",
-  "author": "jlu",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Angel-Mu/WizeGrowth.git"
+  },
+  "author": "Angel Malvar, José Luis Henández, Yathziri Magaña, Vicente Neto, Alex Martínez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Angel-Mu/WizeGrowth/issues"
+  },
+  "homepage": "https://github.com/Angel-Mu/WizeGrowth#readme",
   "dependencies": {
     "express": "~4.7.2",
     "mongoose": "~3.6.2",
