@@ -5,6 +5,8 @@ const app = express(); // create our app with express
 const morgan = require('morgan'); // log request to the console (express4)
 const bodyParser = require('body-parser'); // pull info from HTML POST (express4)
 
+const users = require('./api/routes/users');
+
 // App config
 const logger = require('./config/logger.js');
 const config = require('./config');
@@ -25,6 +27,7 @@ app.use(bodyParser.json({
 
 
 // routes =========================================
+app.use('/api/user', users);
 
 
 // application ========================================
