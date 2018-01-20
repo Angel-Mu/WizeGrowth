@@ -1,7 +1,6 @@
 const Category = require('../models/categories');
 const Star = require('../models/stars');
 
-const categories = require('../controllers/categories');
 const bamboohr = require('../services/bamboohr');
 
 function searchByName(name) {
@@ -52,15 +51,7 @@ function create(req, res) {
                     });
 
                     if (valid) {
-                      Star.create({
-                        caption: req.body.caption,
-                        description: req.body.description,
-                        requirements: req.body.requirements,
-                        rate: req.body.rate,
-                        image: req.body.image,
-                        jobs: req.body.jobs,
-                        category: category
-                      }).then(function (star) {
+                      Star.create(req.body).then(function (star) {
                         res.json(star);
                       }).catch(function (err) {
                         res.status(err.status).json({message: err.message});

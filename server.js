@@ -14,6 +14,7 @@ const users = require('./api/routes/users');
 const jobs = require('./api/routes/jobs');
 const categories = require('./api/routes/categories');
 const stars = require('./api/routes/stars');
+const assign = require('./api/routes/assign');
 
 // App config
 const logger = require('./config/logger.js');
@@ -93,6 +94,7 @@ app.use('/api/user', users);
 app.use('/api/job', jobs);
 app.use('/api/category', categories);
 app.use('/api/star', stars);
+app.use('/api/assign', assign);
 
 // application ========================================
 

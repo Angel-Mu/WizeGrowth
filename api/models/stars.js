@@ -10,7 +10,7 @@ const starsSchema = new Schema({
   rate: { type: String, enum: [ 'BRONZE', 'SILVER', 'GOLD' ] },
   image: { type: String },
   jobs: [ Number ],
-  category: { type: ObjectId, ref: "categories" }
+  category: { type: ObjectId, ref: 'categories' }
 });
 
 module.exports = mongoose.model('stars', starsSchema);
