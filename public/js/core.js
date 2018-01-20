@@ -1,4 +1,4 @@
-var wizeGrowth = angular.module('wizeGrowth', []);
+const wizeGrowth = angular.module('wizeGrowth', []);
 
 function mainController($scope, $http) {
   $http.get('/api/topten')
@@ -6,7 +6,7 @@ function mainController($scope, $http) {
       $scope.topten = data;
       console.log(data);
     })
-    .error(function(data) {
-      console.log('Error: ' + data);
+    .error((data) => {
+      console.log(`Error: ${data}`);
     });
 }
