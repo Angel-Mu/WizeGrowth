@@ -23,10 +23,25 @@ function getEmployee(number) {
       url: `${bambooAPI}/employees/${number}`,
       json: true,
       qs: {
-        fields: 'firstName,lastName,jobTitle,photoUrl'
+        fields: 'displayName,firstName,lastName,preferredName,gender,jobTitle,workEmail'
       }
     }, function (err, response) {
-      if(err) {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(response);
+      }
+    })
+  });
+}
+
+function listPositions() {
+  return new Promise(function (resolve, reject) {
+    request.get({
+      url: `${bambooAPI}/meta/lists/17`,
+      json: true
+    }, function (err, response) {
+      if (err) {
         reject(err);
       } else {
         resolve(response);
@@ -37,5 +52,6 @@ function getEmployee(number) {
 
 module.exports = {
   listEmployees: listEmployees,
-  getEmployee: getEmployee
+  getEmployee: getEmployee,
+  listPositions: listPositions
 };

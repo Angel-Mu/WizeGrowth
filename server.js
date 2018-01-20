@@ -6,6 +6,7 @@ const morgan = require('morgan'); // log request to the console (express4)
 const bodyParser = require('body-parser'); // pull info from HTML POST (express4)
 
 const users = require('./api/routes/users');
+const jobs = require('./api/routes/jobs');
 
 // App config
 const logger = require('./config/logger.js');
@@ -20,7 +21,7 @@ app.use(bodyParser.urlencoded({
 })); // parse application/x-www-form-urlencoded
 app.use(bodyParser.json()); // parse application/json
 app.use(bodyParser.json({
-  type: 'application/vnd.api+json',
+  type: 'application/vnd.api+json'
 })); // parse application/vnd.api+json as json
 
 // define model ====================
@@ -28,6 +29,7 @@ app.use(bodyParser.json({
 
 // routes =========================================
 app.use('/api/user', users);
+app.use('/api/job', jobs);
 
 
 // application ========================================
