@@ -1,10 +1,10 @@
-const categories = require('../models/categories');
+const Category = require('../models/categories');
 
 function searchByName(name) {
   return new Promise(function (resolve, reject) {
-    categories.find({name: {$regex: name, $options: 'i'}})
-      .then(function (stars) {
-        resolve(stars);
+    Category.find({name: {$regex: name, $options: 'i'}})
+      .then(function (categories) {
+        resolve(categories);
       })
       .catch(function (err) {
         reject(err);
@@ -13,7 +13,7 @@ function searchByName(name) {
 }
 
 function list(req, res) {
-  categories.find().then(function (categories) {
+  Category.find().then(function (categories) {
     res.json(categories);
   }).catch(function (err) {
     res.status(err.status).json({message: err.message});
@@ -24,12 +24,11 @@ function create(req, res) {
   if (!req.body.name) {
     res.status(400).json({message: 'Name cannot be empty.'});
   } else {
-    searchByName(req.body.name).then(function (stars) {
-      console.log(stars)
-      if (stars.length) {
+    searchByName(req.body.name).then(function (categories) {
+      if (categories.length) {
         res.status(400).json({message: `Category "${req.body.name}" already exists.`});
       } else {
-        categories.create({
+        Category.create({
           name: req.body.name,
           description: req.body.description
         }).then(function (category) {
@@ -46,5 +45,6 @@ function create(req, res) {
 
 module.exports = {
   list: list,
-  create: create
+  create: create,
+  searchByName: searchByName
 };
