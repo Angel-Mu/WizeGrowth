@@ -11,6 +11,11 @@ body {
   .navbar-brand img {
 	  width: 110px;
   }
+
+  .starselection img {
+	  width: 100px;
+	  height: 100px;
+  }
   
   #wrapper {
 	padding-left: 250px;
@@ -239,3 +244,15 @@ ul {
 	font-size: 16px;
     margin-bottom: 30px;
   }
+
+.starsToGive label > input{ /* HIDE RADIO */
+	visibility: hidden; /* Makes input not-clickable */
+	position: absolute; /* Remove input from document flow */
+}
+.starsToGive label > input + img{ /* IMAGE STYLES */
+	cursor:pointer;
+	border:2px solid transparent;
+}
+.starsToGive label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+	border:2px solid #f00;
+}

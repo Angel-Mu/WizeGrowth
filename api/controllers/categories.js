@@ -1,17 +1,5 @@
 const Category = require('../models/categories');
 
-function searchByName(name) {
-  return new Promise(function (resolve, reject) {
-    Category.find({name: {$regex: name, $options: 'i'}})
-      .then(function (categories) {
-        resolve(categories);
-      })
-      .catch(function (err) {
-        reject(err);
-      });
-  });
-}
-
 function list(req, res) {
   Category.find().then(function (categories) {
     res.json(categories);
@@ -45,6 +33,5 @@ function create(req, res) {
 
 module.exports = {
   list: list,
-  create: create,
-  searchByName: searchByName
+  create: create
 };

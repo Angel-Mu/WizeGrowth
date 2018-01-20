@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
-    <script src="js/users.js"></script>
+    <script src="js/assign.js"></script>
 
 </head>
 <!-- SET THE CONTROLLER -->
@@ -51,26 +51,27 @@
         <div id="page-content-wrapper">
 			<h1 class="title">Assign Stars</h1>
 			<div class="row">
-				<div class="user col-xs-6">
-					<div >
-						<img src="images/achievment.png" class="earned"/>
-						<img src="images/achievment.png" class="earned"/>
-						<img src="images/achievment.png" class="earned"/>
-						<img src="images/achievment.png" class="earned"/>
-						<img src="images/achievment.png" class="earned"/>
-						<img src="images/achievment.png" class="earned"/>
-						<img src="images/achievment.png" class="locked"/>
-						<img src="images/achievment.png" class="locked"/>
-						<img src="images/achievment.png" class="locked"/>
-						<img src="images/achievment.png" class="locked"/>
-						<img src="images/achievment.png" class="locked"/>
-						<img src="images/achievment.png" class="locked"/>
-						<img src="images/achievment.png" class="locked"/>
-						<img src="images/achievment.png" class="locked"/>
-						<img src="images/achievment.png" class="locked"/>
-					</div>
+				<div class="starselection col-xs-6">
+                    <span>Select Star</span>
+                    <select class="form-control" ng-options="star as star.caption for star in stars | orderBy: 'caption'" ng-model="star"></select>
+					<!--<div class="starsToGive" ng-repeat="star in stars" ng-model="star" ng-click="clickStar(star)">-->
+                        <!--<label>-->
+                            <!--<input type="radio" name="fb" ng-value="{{star}}" />-->
+                            <!--<img src="images/achievment.png" class="earned"/>-->
+                            <!--{{star.caption}}-->
+                        <!--</label>-->
+					<!--</div>-->
 				</div>
-				<div class="user col-xs-6"></div>
+				<div class="user col-xs-6">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInput">Select Winner</label>
+                            <select class="form-control" ng-options="user as user.displayName for user in users | orderBy: 'displayName'" ng-model="wizer"></select>
+
+                            <button type="button" class="btn btn-primary" ng-click="assign()">Share happiness</button>
+                        </div>
+                    </form>
+                </div>
 			</div>
         </div>
     </div>

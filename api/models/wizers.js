@@ -2,11 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId;
 
-const categoriesSchema = new Schema({
-  name: {type: String},
-  description: {type: String}
-});
-
 const starsSchema = new Schema({
   caption: {type: String},
   description: {type: String},
@@ -14,7 +9,7 @@ const starsSchema = new Schema({
   rate: {type: String, enum: ['BRONZE', 'SILVER', 'GOLD']},
   image: {type: String},
   jobs: [Number],
-  category: categoriesSchema,
+  category: {type: ObjectId, ref: 'categories'},
   received_date: {type: Date},
   given_by: {
     _id: {type: ObjectId, ref: 'wizers'},
