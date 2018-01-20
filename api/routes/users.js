@@ -6,7 +6,7 @@ const controller = require('../controllers/users');
 const router = express.Router();
 
 router.route('/')
-  .get(/*ensureLoggedIn, */controller.list);
+  .get(ensureLoggedIn, controller.list);
 
 router.route('/:id')
   .get(ensureLoggedIn, controller.get);

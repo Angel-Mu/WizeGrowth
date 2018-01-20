@@ -34,7 +34,7 @@ function mainController($scope, $http) {
         $scope.wizer = undefined;
         $scope.star = undefined;
 
-        console.log(data);
+        alert('Star successfully assigned');
       })
       .error(function(data) {
         console.log('Error: ' + data);
