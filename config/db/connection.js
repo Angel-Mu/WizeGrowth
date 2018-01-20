@@ -5,7 +5,7 @@ const logger = require('../logger');
 // Changes the default mongoose promises library for the native one.
 mongoose.Promise = global.Promise;
 
-const connectionUrl = `mongodb://${settings.host}:${settings.port}/${settings.db}`;
+const connectionUrl = `mongodb://${settings.user}:${settings.pass}@${settings.host}:${settings.port}/${settings.db}`;
 
 const options = {
   user: settings.user,
