@@ -106,11 +106,11 @@ app.use('/api/dashboard', dashboard);
       [
         {
           id: 1,
-          name: 'Vicente Ramos',
-          job: 'Software Engineer',
-          goldstars: 4,
-          silverstars: 2,
-          bronzestars: 6
+          name: 'Amy Granger',
+          job: 'Customer Retention Manager',
+          goldstars: 0,
+          silverstars: 0,
+          bronzestars: 0
         },
         {
           id: 2,

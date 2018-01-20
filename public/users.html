@@ -54,8 +54,8 @@
 						<img src="images/person-flat.png" />
 					</div>
 					<div class="name">
-						<h1>{{ user.name }}</h1>
-						<h2>{{ user.job }}</h2>
+						<h1>{{ user.displayName }}</h1>
+						<h2>{{ user.jobTitle }}</h2>
 					</div>
 					<div class="stars">
 						<div>
@@ -74,22 +74,9 @@
 				</div>
 				<div class="stars-big col-xs-6">
 					<h2>Stars</h2>
-					<div >
+					<div ng-repeat="star in user._doc.stars">
 						<img src="images/achievment.png" class="earned"/>
-						<img src="images/achievment.png" class="earned"/>
-						<img src="images/achievment.png" class="earned"/>
-						<img src="images/achievment.png" class="earned"/>
-						<img src="images/achievment.png" class="earned"/>
-						<img src="images/achievment.png" class="earned"/>
-						<img src="images/achievment.png" class="locked"/>
-						<img src="images/achievment.png" class="locked"/>
-						<img src="images/achievment.png" class="locked"/>
-						<img src="images/achievment.png" class="locked"/>
-						<img src="images/achievment.png" class="locked"/>
-						<img src="images/achievment.png" class="locked"/>
-						<img src="images/achievment.png" class="locked"/>
-						<img src="images/achievment.png" class="locked"/>
-						<img src="images/achievment.png" class="locked"/>
+						{{star.caption}}
 					</div>
 				</div>
         </div>
