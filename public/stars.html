@@ -60,15 +60,15 @@
                         <th></th> 
                         <th>Name</th> 
                         <th>Description</th> 
-                        <th>Prize</th> 
+                        <th>Rate</th>
                     </tr> 
                 </thead>
                 <tbody>
                     <tr ng-repeat="star in stars">
                         <td><img src="images/achievment.png" height="40" /></td>
-                        <td>{{ star.name }}</td>
-                        <td>{{ star.desc }}</td>
-                        <td>{{ star.prize }}</td>
+                        <td>{{ star.caption }}</td>
+                        <td>{{ star.description }}</td>
+                        <td>{{ star.rate }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -86,35 +86,35 @@
                   <form>
                     <div class="form-group">
                             <label for="exampleInputFile">Icon</label>
-                            <input type="file" id="icon">
+                            <input type="file" id="icon" ng-model="formData.image">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Name">
+                        <input type="text" class="form-control" id="name" placeholder="Name" ng-model="formData.caption">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Description</label>
-                        <input type="text" class="form-control" id="desc" placeholder="Description">
+                        <input type="text" class="form-control" id="desc" placeholder="Description" ng-model="formData.description">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputFile">Requirements to win</label>
-                        <textarea class="form-control" rows="3"></textarea>
+                        <textarea class="form-control" rows="3" ng-model="formData.requirements"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputFile">Category</label>
-                        <select class="form-control">
-                            <option>Performance</option>
-                            <option>Culture</option>
-                            <option>Inclusion</option>
-                            <option>Side-projects</option>
-                        </select>
-                    </div>
+                      <label for="exampleInputFile">Category</label>
+                      <select class="form-control" ng-model="formData.category">
+                          <option value="5a63aebcf36d287087a1bdec">Performance</option>
+                          <option value="5a63aed1f36d287087a1bdef">Culture</option>
+                          <option value="5a63aefcf36d287087a1bdf4">Inclusion</option>
+                          <option value="5a63af0ff36d287087a1bdfd">Side-projects</option>
+                      </select>
+                  </div>
                     <div class="form-group">
                         <label for="exampleInputFile">Level</label>
-                        <select class="form-control">
-                            <option>Gold</option>
-                            <option>Silver</option>
-                            <option>Bronze</option>
+                        <select class="form-control" ng-model="formData.rate">
+                            <option value="GOLD">Gold</option>
+                            <option value="SILVER">Silver</option>
+                            <option value="BRONZE">Bronze</option>
                         </select>
                     </div>
                   </form>
