@@ -11,6 +11,7 @@ const bodyParser = require('body-parser'); // pull info from HTML POST (express4
 
 const users = require('./api/routes/users');
 const jobs = require('./api/routes/jobs');
+const categories = require('./api/routes/categories');
 
 // App config
 const logger = require('./config/logger.js');
@@ -67,11 +68,10 @@ app.use(flash());
 // routes =========================================
 app.use('/api/user', users);
 app.use('/api/job', jobs);
-
+app.use('/api/category', categories);
 
 // application ========================================
-
-app.get('/', (req, res) => {
+app.get('*', function (req, res) {
   res.sendfile('./public.index.html'); // load the single view file (angular will handle the page changes on the front-end)
 });
 

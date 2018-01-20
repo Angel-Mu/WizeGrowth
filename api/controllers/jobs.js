@@ -2,11 +2,9 @@ const bamboohr = require('../services/bamboohr');
 
 function list(req, res) {
   bamboohr.listPositions().then(function (response) {
-    res.write(JSON.stringify(response.body.options));
-    res.status(200).end();
+    res.json(response.body.options);
   }).catch(function (err) {
-    res.write({message: err.message});
-    res.status(500).end();
+    res.status(err.status).json({message: err.message});
   });
 }
 
